@@ -36,6 +36,7 @@ app.post('/api/get_multiplication_tip', async (req, res) => {
     res.json({ tip });
   } catch (error) {
     console.error('Error fetching multiplication tip:', error);
+    console.log("Error from OpenAI API:", error.response.data.error);    
     res.status(500).json({ error: 'Failed to fetch multiplication tip.' });
   }
 });
